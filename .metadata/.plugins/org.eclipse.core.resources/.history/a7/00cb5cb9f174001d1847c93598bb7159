@@ -1,0 +1,108 @@
+package controle;
+
+import visualizacao.EntradaSaida;
+import modelo.*;
+
+public class Controladora {
+
+	private Conta conta = new Conta();
+	Movimentacao movimentacao = null;
+
+	public void exibeMenu() {
+		int opcao;
+		boolean validadora = false;
+
+		conta.setTitularDaConta(EntradaSaida.solicitaTitularDaConta());
+		conta.setTipo(EntradaSaida.solicitaTipoDaConta());
+		conta.setSaldo(0);
+
+		do {
+			opcao = EntradaSaida.solicitaOpcao();
+
+			switch (opcao) {
+			case 0:
+				validadora = true;
+
+				String depositar = "Deposito";
+				double deposito = EntradaSaida.solicitarInformacoesDeposito();
+				this.conta.depositar(deposito);
+
+				movimentacao = new Movimentacao();
+
+				movimentacao.setTipo(depositar);
+				movimentacao.setValor(deposito);
+				movimentacao.setData(EntradaSaida.data());
+				this.conta.adicionarMovimentacao(movimentacao);
+				break;
+
+			case 1:
+
+				if (conta.getSaldo() < -999) {
+					EntradaSaida.exibeMsgErro2();
+
+				}
+
+				String sacar = "Saque";
+				double saque = EntradaSaida.solicitarInformacoesSaque();
+				this.conta.sacar(saque);
+
+				movimentacao = new Movimentacao();
+
+				movimentacao.setTipo(sacar);
+				movimentacao.setValor(saque);
+				movimentacao.setData(EntradaSaida.data());
+				this.conta.adicionarMovimentacao(movimentacao);
+				break;
+
+			case 2:
+				validadora = true;
+
+				String saldo = conta.gerarSaldo();
+				EntradaSaida.exibirSaldo(saldo);
+				break;
+
+			case 3:
+				validadora = true;
+
+				String dados = conta.gerarDadosDaConta();
+				EntradaSaida.exibirDadosDaConta(dados);
+				break;
+
+			case 4:
+				if (validadora == false) {
+					EntradaSaida.exibeMsgErro();
+					break;
+				}
+
+				String extrato = conta.gerarExtrato();
+				EntradaSaida.exibirExtratoCompleto(extrato);
+				break;
+
+			case 5:
+				if (validadora == false) {
+					EntradaSaida.exibeMsgErro();
+					break;
+				}
+
+				String extratoDepositos = conta.gerarExtratoDepositos();
+				EntradaSaida.exibirExtratoDeDepositos(extratoDepositos);
+				break;
+
+			case 6:
+				if (validadora == false) {
+					EntradaSaida.exibeMsgErro();
+					break;
+				}
+
+				String extratoSaque = conta.gerarExtratoSaques();
+				EntradaSaida.exibirExtratoDeSaques(extratoSaque);
+				break;
+
+			}
+		} while (opcao != 7);
+
+		EntradaSaida.exibeMsgEncerrar();
+		System.exit(0);
+	}
+
+}

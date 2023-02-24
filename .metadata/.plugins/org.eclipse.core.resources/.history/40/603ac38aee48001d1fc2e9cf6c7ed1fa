@@ -1,0 +1,24 @@
+package modelo;
+
+public abstract class Carro {
+
+	protected String modelo;
+	protected int cor;
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public int getCor() {
+		return cor;
+	}
+
+	public void setCor(int cor) {
+		this.cor = cor;
+	}
+
+}

@@ -1,0 +1,32 @@
+package visualizacao;
+
+public class EntradaSaida {
+
+	public static String cadastroProdutos() {
+		
+	}
+	
+	public static void listarCadastrados() {
+		
+	}
+	
+	public static void entradaEstoque() {
+		
+	}
+	
+	public static String vendeProduto() {
+		
+	}
+	
+	public static void listarEstoque() {
+	
+	}
+	
+	public static void exibirCupons() {
+		
+	}
+	
+	public static void exibeMsgEncerrar() {
+		
+	}
+}

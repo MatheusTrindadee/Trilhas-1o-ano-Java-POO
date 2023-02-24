@@ -1,0 +1,71 @@
+package modelo;
+
+import java.util.ArrayList;
+import visualizacao.EntradaSaida;
+
+public class Conta {
+
+	private String titularDaConta;
+	private String tipo;
+	private String saldo;
+	private ArrayList<Movimentacao> listaDeMovimentacao = new ArrayList<Movimentacao>();
+
+	public void depositar() {
+
+	}
+
+	public void sacar() {
+
+	}
+
+	public void gerarSaldo() {
+
+	}
+
+	public void gerarDadosDaConta() {
+
+	}
+
+	public void gerarExtrato() {
+
+	}
+
+	public void gerarExtratoDepositos() {
+
+	}
+
+	public void gerarExtratoSaques() {
+
+	}
+
+	public String getTitularDaConta() {
+		return titularDaConta;
+	}
+
+	public void setTitularDaConta(String titularDaConta) {
+		this.titularDaConta = titularDaConta;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(String saldo) {
+		this.saldo = saldo;
+	}
+	
+	public Conta() {
+		setTitularDaConta(titularDaConta);
+		setTipo(tipo);
+		setSaldo(saldo);
+	}
+
+}

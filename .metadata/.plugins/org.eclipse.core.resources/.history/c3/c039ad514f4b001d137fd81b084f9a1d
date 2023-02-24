@@ -1,0 +1,47 @@
+package controle;
+
+import javax.swing.JOptionPane;
+import visualizacao.EntradaSaida;
+import modelo.*;
+
+public class Controladora {
+
+	private Fabrica fabrica = new Fabrica();
+	private Carro carro = null;
+
+	public void exibeMenu() {
+		int opcao;
+		boolean validadora = false;
+
+		do {
+			opcao = EntradaSaida.solicitaOpcao();
+
+			switch (opcao) {
+			case 0:
+				this.carro = new Carro();
+				carro.setModelo(EntradaSaida.solicitaModelo());
+				carro.setCor(EntradaSaida.solicitaCor());
+				// carro.setMarca(EntradaSaida.solicitaMarca());
+				// carro.setAro(EntradaSaida.solicitaAro());
+				this.fabrica.fabricaCarro(carro);
+				this.fabrica.mostrarLista();
+
+				break;
+			case 1:
+				String modeloDeVenda = EntradaSaida.solicitaModelo();
+				String corDeVenda = EntradaSaida.solicitaCor();
+				this.fabrica.vendeCarro(corDeVenda, modeloDeVenda);
+				break;
+			case 2:
+				String informacoes = this.carro.geraInfoCarro();
+				EntradaSaida.exibeInfoCarro(informacoes);
+				break;
+			}
+		} while (opcao != 3);
+
+		EntradaSaida.exibeMsgEncerrar();
+		System.exit(0);
+
+	}
+
+}

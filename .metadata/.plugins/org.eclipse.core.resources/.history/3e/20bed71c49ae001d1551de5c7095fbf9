@@ -1,0 +1,16 @@
+package numberFormat;
+
+import javax.swing.JOptionPane;
+
+public class testeErro {
+
+	public static void main(String[] args) {
+		
+		
+		int inteiro=0;
+		
+		inteiro = Integer.parseInt(JOptionPane.showInputDialog(null, "coloque um núemro"));
+
+	}
+
+}

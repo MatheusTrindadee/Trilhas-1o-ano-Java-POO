@@ -1,0 +1,36 @@
+package visualizacao;
+
+import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+
+public class EntradaSaida {
+	
+	public String solicitarInformacoesDeposito() {
+		
+	}
+	
+	public String solicitarInformacoesSaque() {
+		
+	}
+	
+	public String exibirSaldo() {
+		
+	}
+	
+	public String exibirDadosDaConta() {
+		
+	}
+	
+	public String exibirExtratoCompleto() {
+		
+	}
+	
+	public String exibirExtratoDeDepositos() {
+		
+	}
+
+	public String exibirExtratoDeSaques() {
+		
+	}
+	
+}

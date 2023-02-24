@@ -1,0 +1,45 @@
+package modelo;
+
+import java.util.ArrayList;
+
+public class Fabrica {
+
+	ArrayList<Carro> listaDeCarros = new ArrayList<Carro>();
+
+	public void vendeCarro(String corDeVenda, String modelo, String motor, String aro) {
+
+		for (int i = 0; i < listaDeCarros.size(); i++) {
+			Carro carro = listaDeCarros.get(i);
+			if (carro.getCor().contains(corDeVenda) && carro.getModelo().contains(modelo)
+					&& (carro.getMotor().contains(motor) && (carro.getAro().contains(aro)))) {
+				listaDeCarros.remove(carro);
+			}
+		}
+	}
+
+	public void fabricaCarro(Carro carro) {
+
+		listaDeCarros.add(carro);
+	}
+
+	public void mostrarLista() {
+		for (Carro carro : listaDeCarros) {
+			System.out.println(carro.getModelo());
+			System.out.println(carro.getCor());
+			System.out.println(carro);
+		}
+	}
+
+	public String geraInfoCarro() {
+		String informacoes = "";
+		for (Carro carro : listaDeCarros) {
+			informacoes += "Modelo: " + carro.getModelo() + "\nCor: " + carro.getCor() + "\n";
+		}
+		if (informacoes.isBlank()) {
+			return informacoes = "A lista esta vazia!";
+		}
+		return informacoes;
+
+	}
+
+}

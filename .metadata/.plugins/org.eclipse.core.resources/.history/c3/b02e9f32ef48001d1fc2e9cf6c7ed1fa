@@ -1,0 +1,27 @@
+package modelo;
+
+import java.util.ArrayList;
+
+public class Fabrica {
+
+	private String modelo;
+	private String cor;
+	ArrayList<Carro> listaDeCarros = new ArrayList<Carro>();
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
+}

@@ -1,0 +1,62 @@
+package visualizacao;
+
+import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+import java.util.ArrayList;
+
+public class EntradaSaida {
+
+	public static int solicitaOpcao() {
+		String[] opcoes = { "Fabricar carro", "Vender carro", "Ver informações", "Sair" };
+		JComboBox<String> menu = new JComboBox<String>(opcoes);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+
+		return menu.getSelectedIndex();
+	}
+
+	public static void exibeMsgEncerrar() {
+		JOptionPane.showMessageDialog(null, "O programa será encerrado");
+	}
+
+	public static String solicitaModelo() {
+		String[] opcoes = { "Sedan", "Hatch", "SUV", "Esportivo" };
+		JComboBox<String> menu = new JComboBox<String>(opcoes);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+
+		return (String) menu.getSelectedItem();
+	}
+
+	public static String solicitaCor() {
+		String[] opcoes = { "Preto", "Branco", "Cinza", "Vermelho" };
+		JComboBox<String> menu = new JComboBox<String>(opcoes);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+
+		return (String) menu.getSelectedItem();
+	}
+
+	// public static String solicitaMarca() {
+	// String[] opcoes = {""};
+	// JComboBox<String> menu = new JComboBox<String>(opcoes);
+	// JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada",
+	// JOptionPane.OK_CANCEL_OPTION);
+
+	// return (String) menu.getSelectedItem();
+	//}
+
+	//public static String solicitaAro() {
+	//	String[] opcoes = { "13", "14", "15" };
+	//	JComboBox<String> menu = new JComboBox<String>(opcoes);
+	//	JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+
+	//	return (String) menu.getSelectedItem();
+	//}
+	
+	public static void exibeInfoCarro(String informacoes) {
+		JOptionPane.showMessageDialog(null, informacoes, "Informações do carro", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	public static void exibeMsgErro() {
+		JOptionPane.showMessageDialog(null, "Fabrique o carro primeiro!");
+	}
+
+}

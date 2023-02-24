@@ -1,0 +1,42 @@
+package controle;
+
+import javax.swing.JOptionPane;
+import visualizacao.EntradaSaida;
+import modelo.*;
+
+public class Controladora {
+
+	private Fabrica fabrica =  new Fabrica();
+	private Carro carro = null;
+
+	public void exibeMenu() {
+		int opcao;
+		boolean validadora = false;
+
+		do {
+			opcao = EntradaSaida.solicitaOpcao();
+
+			switch (opcao) {
+			case 0:
+				this.carro = new Carro();
+				carro.setModelo(EntradaSaida.solicitaModelo());	
+				carro.setCor(EntradaSaida.solicitaCor());
+				this.fabrica.fabricaCarro(carro);
+				
+				
+				break;
+			case 1:
+				JOptionPane.showMessageDialog(null, "vende");
+				break;
+			case 2:
+				JOptionPane.showMessageDialog(null, "informação");
+				break;
+			}
+		} while (opcao != 3);
+
+		EntradaSaida.exibeMsgEncerrar();
+		System.exit(0);
+
+	}
+
+}

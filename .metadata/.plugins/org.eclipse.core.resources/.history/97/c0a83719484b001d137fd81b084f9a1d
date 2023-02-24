@@ -1,0 +1,33 @@
+package modelo;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import visualizacao.EntradaSaida;
+
+public class Fabrica {
+	
+	ArrayList<Carro> listaDeCarros = new ArrayList<Carro>();
+	
+	public static void vendeCarro(Carro carro) {
+		String pergunta = JOptionPane.showInputDialog("Informe qual carro deseja vender:");
+		
+	}
+	
+	public void fabricaCarro(Carro carro) {
+		
+		listaDeCarros.add(carro);
+	}
+	
+	public void mostrarLista() {
+		for (Carro carro: listaDeCarros) {
+			System.out.println(carro.getModelo());
+			System.out.println(carro.getCor());
+			System.out.println(carro);
+		}
+	}
+
+}
+
+

@@ -1,0 +1,23 @@
+package controle;
+
+import visualizacao.EntradaSaida;
+import modelo.*;
+
+public class Controladora {
+
+	public void exibeMenu() {
+		int opcao;
+
+		do {
+			opcao = EntradaSaida.solicitaOpcao();
+
+			switch (opcao) {
+			case 0:
+				
+				break;
+
+			}
+		} while (opcao != 3);
+	}
+
+}

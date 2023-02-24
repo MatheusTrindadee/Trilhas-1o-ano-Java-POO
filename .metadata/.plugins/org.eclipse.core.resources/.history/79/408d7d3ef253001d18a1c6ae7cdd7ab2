@@ -1,0 +1,41 @@
+package modelo;
+
+import java.util.ArrayList;
+import visualizacao.EntradaSaida;
+
+public class Conta {
+
+	private String titularDaConta;
+	private String tipo;
+	private String saldo;
+	ArrayList<Movimentacao> listaDeMovimentacao = new ArrayList<Movimentacao>();
+
+	public String depositar() {
+
+	}
+	
+	public String sacar() {
+		
+	}
+	
+	public String gerarSaldo() {
+		
+	}
+	
+	public String gerarDadosDaConta() {
+		
+	}
+	
+	public String gerarExtrato() {
+		
+	}
+	
+	public String gerarExtratoDepositos() {
+		
+	}
+	
+	public String gerarExtratoSaques() {
+		
+	}
+	
+}

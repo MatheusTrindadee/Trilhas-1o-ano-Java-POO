@@ -1,0 +1,67 @@
+package visualizacao;
+
+import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+
+public class EntradaSaida {
+	
+	public static String solicitaTitularDaConta() {
+		String nome = JOptionPane.showInputDialog(null, "Infome seu nome");
+		return nome;
+	}
+	
+	public static Object solicitaTipoDaConta() {
+		String [] opcoes = {"Corrente", "Poupança"};
+		JComboBox<String> menu = new JComboBox<String>(opcoes);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+		
+		return menu.getSelectedItem();
+	}
+
+	public static int solicitaOpcao() {
+		String[] opcoes = { "Depositar", "Sacar", "Gerar Saldo", "Gerar Dados da Conta", "Gerar Extrato",
+				"Gerar Extrato dos Depósitos", "Gerar Extrato dos Saques", "Sair" };
+		JComboBox<String> menu = new JComboBox<String>(opcoes);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+
+		return menu.getSelectedIndex();
+	}
+
+	public static int solicitarInformacoesDeposito() {
+		int deposito = Integer.parseInt(JOptionPane.showInputDialog("Informe quanto de dinheiro você quer depositar:"));
+
+		return deposito;
+
+	}
+
+	public static int solicitarInformacoesSaque() {
+		int saque = Integer.parseInt(JOptionPane.showInputDialog("Informe quanto de dinheiro você quer sacar:"));
+		
+		return saque;
+	}
+
+	public String exibirSaldo() {
+
+	}
+
+	public String exibirDadosDaConta() {
+
+	}
+
+	public String exibirExtratoCompleto() {
+
+	}
+
+	public String exibirExtratoDeDepositos() {
+
+	}
+
+	public String exibirExtratoDeSaques() {
+
+	}
+
+	public static void exibeMsgEncerrar() {
+		JOptionPane.showMessageDialog(null, "O programa será encerrado");
+	}
+
+}

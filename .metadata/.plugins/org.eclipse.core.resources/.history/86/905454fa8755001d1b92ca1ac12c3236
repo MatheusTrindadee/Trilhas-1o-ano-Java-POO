@@ -1,0 +1,50 @@
+package visualizacao;
+
+import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+
+public class EntradaSaida {
+
+	public static int solicitaOpcao() {
+		String[] opcoes = { "Depositar", "Sacar", "Gerar Saldo", "Gerar Dados da Conta", "Gerar Extrato",
+				"Gerar Extrato dos Depósitos", "Gerar Extrato dos Saques", "Sair" };
+		JComboBox<String> menu = new JComboBox<String>(opcoes);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+
+		return menu.getSelectedIndex();
+	}
+
+	public static int solicitarInformacoesDeposito() {
+		return;
+
+	}
+
+	public String solicitarInformacoesSaque() {
+
+	}
+
+	public String exibirSaldo() {
+
+	}
+
+	public String exibirDadosDaConta() {
+
+	}
+
+	public String exibirExtratoCompleto() {
+
+	}
+
+	public String exibirExtratoDeDepositos() {
+
+	}
+
+	public String exibirExtratoDeSaques() {
+
+	}
+	
+	public static void exibeMsgEncerrar() {
+		JOptionPane.showMessageDialog(null, "O programa será encerrado");
+	}
+
+}

@@ -1,0 +1,13 @@
+package modelo;
+
+import java.util.ArrayList;
+
+import visualizacao.EntradaSaida;
+
+public class Fabrica {
+	
+	
+
+}
+
+

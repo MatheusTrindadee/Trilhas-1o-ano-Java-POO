@@ -1,0 +1,12 @@
+package controle;
+
+import visualizacao.EntradaSaida;
+import modelo.*;
+
+public class Controladora {
+	
+	public void exibeMenu() {
+		
+	}
+
+}

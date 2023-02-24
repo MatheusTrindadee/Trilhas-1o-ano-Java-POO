@@ -1,0 +1,46 @@
+package controle;
+
+import visualizacao.EntradaSaida;
+import modelo.*;
+
+
+public class Controladora {
+	
+	private Conta conta = new Conta();
+
+	public void exibeMenu() {
+		int opcao;
+		
+		conta.setTitularDaConta(EntradaSaida.solicitaTitularDaConta());
+		conta.setTipo(EntradaSaida.solicitaTipoDaConta());
+		conta.setSaldo(0);
+
+		do {
+			opcao = EntradaSaida.solicitaOpcao();
+
+			switch (opcao) {
+			case 0:
+				int deposito = EntradaSaida.solicitarInformacoesDeposito();
+				break;
+			case 1:
+				int saque = EntradaSaida.solicitarInformacoesSaque();
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+
+			}
+		} while (opcao != 7);
+
+		EntradaSaida.exibeMsgEncerrar();
+		System.exit(0);
+	}
+
+}

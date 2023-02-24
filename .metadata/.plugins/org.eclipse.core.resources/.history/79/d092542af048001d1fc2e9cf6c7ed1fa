@@ -1,0 +1,41 @@
+package visualizacao;
+
+import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+import java.util.ArrayList;
+
+public class EntradaSaida {
+
+	public static int solicitaOpcao() {
+		String[] opcoes = { "Fabricar carro", "Vender carro", "Ver informações", "Sair" };
+		JComboBox<String> menu = new JComboBox<String>(opcoes);
+		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
+
+		return menu.getSelectedIndex();
+	}
+
+	public static void exibeMsgEncerrar() {
+		JOptionPane.showMessageDialog(null, "O programa será encerrado");
+	}
+
+	public static String solicitaModelo(String descricao, int ordem) {
+		if (ordem == 0) {
+			return JOptionPane.showInputDialog("Informe o modelo do " + descricao);
+		} else {
+			return JOptionPane.showInputDialog("Informe a descrição do " + ordem + " " + descricao);
+		}
+	}
+
+	public static String solicitaCor() {
+		return JOptionPane.showInputDialog("Informe a cor do carro:");
+	}
+	
+	public static int solicitaQntdCarros(String carros) {
+		int qntdCarros = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de " + carros));
+		while (qntdCarros <= 0) {
+			JOptionPane.showMessageDialog(null, "A quantidade de portas e janelas não pode ser igual ou inferior a 0");
+			qntdCarros = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de " + abertura));
+		}
+		return qntdCarros;
+	}
+}

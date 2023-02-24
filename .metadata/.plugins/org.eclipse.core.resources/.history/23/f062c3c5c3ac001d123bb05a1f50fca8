@@ -1,0 +1,82 @@
+package controle;
+
+import visualizacao.EntradaSaida;
+import modelo.*;
+
+public class Controladora {
+
+	Produtos produto = null;
+	Estoque estoque = new Estoque();
+	Cupom cupom = null;
+
+	public void exibeMenu() {
+		int opcao;
+		String inserirDescricao = "";
+		
+		int quantidade = 0;
+
+		do {
+			opcao = EntradaSaida.solicitaOpcao();
+
+			switch (opcao) {
+			case 0:
+				String inserirCodigo = EntradaSaida.inserirCodigo();
+				inserirDescricao = EntradaSaida.inserirDescricao();
+				double inserirPreco = EntradaSaida.inserirPreco();
+
+				produto = new Produtos();
+
+				produto.setCodigo(inserirCodigo);
+				produto.setDescricao(inserirDescricao);
+				produto.setPreco(inserirPreco);
+				produto.setQuantidade(0);
+				estoque.adicionarProduto(produto);
+				break;
+
+			case 1:
+				String listarCadastrados = estoque.montarListaCadastro();
+				EntradaSaida.exibirListaCadastrados(listarCadastrados);
+				break;
+
+			case 2:
+				String codigo = EntradaSaida.solicitaCodigo();
+				quantidade = EntradaSaida.solicitaQuantidade();
+
+				estoque.entradaEstoque(codigo, quantidade);
+				break;
+
+			case 3:
+				String vendeProduto = EntradaSaida.solicitaCodigo();
+				int removeProduto = EntradaSaida.solicitaQuantidade();
+
+				estoque.vendeProduto(vendeProduto, removeProduto);
+				estoque.removeProduto(vendeProduto);
+				
+
+				cupom = new Cupom();
+
+				cupom.setData(EntradaSaida.data());
+				cupom.setDescricao(inserirDescricao);
+				cupom.setQuantidade(quantidade);
+				cupom.setValor(estoque.calculoCupons(vendeProduto, removeProduto));
+				estoque.cadastrarCupom(cupom);
+
+			case 4:
+				String listarEstoque = estoque.montarListaEstoque();
+				EntradaSaida.exibirListaEstoque(listarEstoque);
+				break;
+
+			case 5:
+				String listarCupons = estoque.montarListaCupons();
+				EntradaSaida.exibirListaCupons(listarCupons);
+				break;
+				
+			case 6:
+				String calculoCupons = estoque.gerarValorTotal();
+				EntradaSaida.exibeValorTotal(calculoCupons);
+			}
+		} while (opcao != 7);
+		EntradaSaida.exibeMsgEncerrar();
+		System.exit(0);
+	}
+}
